@@ -25,7 +25,7 @@ router.post('/:url', (req, res) => {
     const newUrl = req.params.url;
 
     //check if db contains url
-    URL.findOne({url: newUrl}, (err, urlData) => {
+    Url.findOne({url: newUrl}, (err, urlData) => {
         if (err) {
             console.log(err);
         } else {
