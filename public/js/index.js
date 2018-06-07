@@ -3,9 +3,10 @@ const urlInput = document.querySelector("#urlinput");
 const shortUrlContainer = document.querySelector("#output");
 
 button.addEventListener("click", (e) => {
-    fetch(window.location.href + '/' + urlInput.value, {
+    fetch(window.location.href + urlInput.value, {
         method: 'POST'
     }).then((response) => {
-            shortUrlContainer.textContent = response;
+        console.log(response);
+        shortUrlContainer.textContent = response;
         });
 });
