@@ -1,6 +1,6 @@
 const button = document.querySelector("#submiturl");
 const urlInput = document.querySelector("#urlinput");
-const shortUrlContainer = document.querySelector("#")
+const shortUrlContainer = document.querySelector("#output");
 
 button.addEventListener("click", (e) => {
     fetch(window.location.href + '/' + urlInput.value, {
