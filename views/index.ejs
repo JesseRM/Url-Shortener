@@ -3,18 +3,22 @@
     <head>
         <title>URL Shortener</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
         <h1>URL Shortener</h1>
-        <form>
-            <div class="form-group">
-                <input id="urlinput" type="text" name="url" placeholder="Enter URL...">
-                <input id="submiturl" type="button" value="Shorten URL">
-            </div>
+        <div class="container">
+            <form class="form-inline justify-content-center">
+                <div class="form-group">
+                    <label for="urlinput" class="col-sm-2 col-form-label">URL</label>
+                    <input id="urlinput" class="form-control" type="url" placeholder="http://www.example.com">
+                </div>
+                <button type="submit" class="btn btn-primary">Shorten URL</button>
+            </form>
             <div id="output"></div>
-            
-        </form>
+        </div>
     <script src="/js/index.js"></script>
     </body>
 </html>
