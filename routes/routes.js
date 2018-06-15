@@ -26,27 +26,27 @@ router.post('/:url(*)', (req, res) => {
     const newUrl = req.params.url;
     
     if (validUrl.isUri(newUrl)) {
-        Url.findOne({url: newUrl}, (err, url) => {
+        Url.findOne({url: newUrl}, (err, foundUrl) => {
             if (err) {
                 console.log(err);
             } else {
-                if (url) {
-                    res.send(url.shortUrl);
+                if (foundUrl) {
+                    res.send(foundUrl.shortUrl);
                 } else {
                     const shortUrl = req.headers.host + '/' + shortid.generate();
                     
-                    Url.create({url: newUrl, shortUrl: shortUrl}, (err, url) => {
+                    Url.create({url: newUrl, shortUrl: shortUrl}, (err, urlDocument) => {
                         if (err) {
                             console.log(err);
                         } else {
-                            res.send(url.shortUrl);
+                            res.send(urlDocument.shortUrl);
                         }
                     });
                 }
             }
         });
     } else {
-        res.send("Please enter a valide URL");
+        res.send("Please enter a valid URL");
     }
 });
 
