@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI, {
     auth: {
         user: process.env.MONGODB_USER,
-        pass: process.env.MONGODB_PASS
+        password: process.env.MONGODB_PASS
     }
 });
 
