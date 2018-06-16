@@ -13,7 +13,7 @@ router.get('/:code', (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            if (url) {
+            if (foundUrl) {
                 res.redirect(foundUrl.url);
             } else {
                 res.json({error: 'This url is not in the db'});
