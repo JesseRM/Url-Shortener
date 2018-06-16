@@ -3,7 +3,12 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, {
+    auth: {
+        user: process.env.MONGODB_USER,
+        pass: process.env.MONGODB_PASS
+    }
+});
 
 mongoose.connection.once('open', () => {
     console.log("Connected to the db");
